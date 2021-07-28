@@ -1,4 +1,5 @@
 import random
+import math
 
 def input_range_1():
     try:
@@ -19,10 +20,13 @@ def input_range_2():
 def random_number_game():
     range_1 = input_range_1()
     range_2 = input_range_2()
+    log_range_1 = math.log(range_1)
+    log_range_2 = math.log(range_2)
     user_num = ""
     ran_num = random.randrange(range_1, range_2)
     num_guesses = 0
-    guess_limit = 5
+    guess_limit = round(log_range_2 - log_range_1 + 1)     # It's gonna take the 2 numbers that the user inputs for the range and it's gonna calculate them to set the limit of guesses
+    print(f"\nYou only have {guess_limit} tries to guess the number!")
     while user_num != ran_num:
         if num_guesses < guess_limit:
             try:
