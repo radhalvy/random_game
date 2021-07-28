@@ -2,18 +2,18 @@ import random
 
 def input_range_1():
     try:
-        num_range_1 = int(input("Enter the first number of the range: "))
+        num_range_1 = int(input("\nEnter the first number of the range: "))
         return num_range_1
     except ValueError:
-        print("Invalid range.")
+        print("\nInvalid range.")
         return
 
 def input_range_2():
     try:
-        num_range_2 = int(input("Enter the second number of the range: "))
+        num_range_2 = int(input("\nEnter the second number of the range: "))
         return num_range_2
     except ValueError:
-        print("Invalid range.")
+        print("\nInvalid range.")
         return
 
 def random_number_game():
@@ -26,22 +26,22 @@ def random_number_game():
     while user_num != ran_num:
         if num_guesses < guess_limit:
             try:
-                user_num = int(input("Enter your guess: "))
+                user_num = int(input("\nEnter your guess: "))
             except ValueError:
-                print("Invalid input.")
+                print("\nInvalid input.")
                 return
             if user_num == ran_num:
-                print("You win!")
+                print("\nYou win!")
                 return
             else:
                 if user_num < ran_num:
-                    print("Higher.")
+                    print("\nHigher.")
                     num_guesses += 1
                 else:
-                    print("Lower.")
+                    print("\nLower.")
                     num_guesses += 1
         else:
-            print("You're out of guesses.")
+            print("\nYou're out of guesses.")
             return
 
 random_number_game()
